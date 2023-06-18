@@ -15,5 +15,6 @@ app.get("/home", (req, res) => {
     res.sendFile(__dirname + '/templates/home.html');
 });
 app.listen(port, () => {
-    console.log('[server]: Server is runnin at http://localhost:5000');
+    console.log('Debug mode is : off');
+    console.log(`[server]: Server is runnin at http://localhost:${port}`);
 });

@@ -35,8 +35,22 @@ let run = (name) => {
     signal = true;
     if (signal = true) {
         const message = 'My name is ${name}';
-        console.log(message);
+        // console.log(message)
         console.log("RUN " + name + " RUN!");
     }
 };
-run('Forest');
+// run('Forest')
+let greet = () => {
+    console.log('Hello darkness');
+};
+const add = (a, b, c = 10) => {
+    console.log(a + b);
+    console.log(c);
+};
+add(5, 10, 'twenty');
+const minus = (a, b) => {
+    console.log(`${a} plus ${b}`);
+    return a + b;
+};
+let result = minus(10, 6);
+console.log(result);

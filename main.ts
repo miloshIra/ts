@@ -55,9 +55,29 @@ let run = (name:string) => {
     signal = true
     if (signal=true) {
     const message = 'My name is ${name}';
-    console.log(message)
+    // console.log(message)
     console.log("RUN " + name + " RUN!")
     }
 }
 
-run('Forest')
+// run('Forest')
+
+let greet:Function = () => {
+    console.log('Hello darkness');
+}
+
+const add = (a:number, b:number, c:number|string = 10) => {
+    console.log(a+b)
+    console.log(c)
+}
+
+add(5, 10, 'twenty')
+
+const minus:Function = (a:number, b:number) => {
+
+    console.log(`${a} plus ${b}`)
+    return a + b
+}
+
+let result:number = minus(10,6)
+console.log(result)

@@ -11,6 +11,9 @@ const port = 5000;
 app.get('/', (req, res) => {
     res.send('Express + Typescript Server');
 });
+app.get("/home", (req, res) => {
+    res.sendFile(__dirname + '/templates/home.html');
+});
 app.listen(port, () => {
     console.log('[server]: Server is runnin at http://localhost:5000');
 });

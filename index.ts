@@ -11,6 +11,11 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 
+app.get("/home", (req: Request, res: Response) => {
+
+    res.sendFile(__dirname + '/templates/home.html');
+})
+
 app.listen(port, () => {
 
     console.log('[server]: Server is runnin at http://localhost:5000');

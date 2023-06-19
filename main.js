@@ -65,6 +65,9 @@ var Invoice = /** @class */ (function () {
     Invoice.prototype.format = function () {
         return "".concat(this.client, " owes ").concat(this.amount, "e for ").concat(this.details);
     };
+    Invoice.prototype.get_client = function () {
+        return "".concat(this.client);
+    };
     return Invoice;
 }());
 var invoices = [];
@@ -76,4 +79,5 @@ invoices.push(invTwo);
 invoices.push(invThree);
 invoices.forEach(function (inv) {
     console.log(inv.client, inv.details, inv.amount, inv.format());
+    console.log(inv.get_client());
 });

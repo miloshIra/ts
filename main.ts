@@ -85,18 +85,18 @@ let result:number = minus(10,6)
 console.log(result)
 
 class Invoice {
-    client:string
-    details:string
-    amount:number
-
-    constructor(client:string, details:string, amount:number) {
-        this.client=client
-        this.details=details
-        this.amount=amount
-    }
+    constructor(
+        public client:string,
+        public details:string, 
+        public amount:number
+        ) {}
 
     format() {
         return `${this.client} owes ${this.amount}e for ${this.details}`;
+    }
+
+    get_client(){
+        return `${this.client}`
     }
 }
 
@@ -112,4 +112,5 @@ invoices.push(invThree)
 
 invoices.forEach(inv => {
     console.log(inv.client, inv.details, inv.amount, inv.format());
+    console.log(inv.get_client());
 })

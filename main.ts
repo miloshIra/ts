@@ -1,3 +1,5 @@
+import { IncomingMessage } from "http";
+
 const char= "Mia"
 
 
@@ -81,3 +83,33 @@ const minus:Function = (a:number, b:number) => {
 
 let result:number = minus(10,6)
 console.log(result)
+
+class Invoice {
+    client:string
+    details:string
+    amount:number
+
+    constructor(client:string, details:string, amount:number) {
+        this.client=client
+        this.details=details
+        this.amount=amount
+    }
+
+    format() {
+        return `${this.client} owes ${this.amount}e for ${this.details}`;
+    }
+}
+
+let invoices: Invoice[] = [];
+
+const invOne = new Invoice('mario', 'food', 250)
+const invTwo = new Invoice('Ira','games', 250)
+const invThree = new Invoice('Mia', "looks", 250)
+
+invoices.push(invOne)
+invoices.push(invTwo)
+invoices.push(invThree)
+
+invoices.forEach(inv => {
+    console.log(inv.client, inv.details, inv.amount, inv.format());
+})

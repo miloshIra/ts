@@ -1,56 +1,79 @@
 "use strict";
-const char = "Mia";
-let inputs = ['H', 'a', 'as'];
+Object.defineProperty(exports, "__esModule", { value: true });
+var char = "Mia";
+var inputs = ['H', 'a', 'as'];
 // console.log(inputs)
-inputs.forEach(input => {
+inputs.forEach(function (input) {
     // console.log(input)
 });
-let guy = 'mario';
-let age = 30;
-let isBlackBelt = false;
-const circ = (diameter) => {
+var guy = 'mario';
+var age = 30;
+var isBlackBelt = false;
+var circ = function (diameter) {
     return diameter * Math.PI;
 };
 console.log(circ(2));
 // array
-let names = ['Ira', 'Mia', 'Lando'];
+var names = ['Ira', 'Mia', 'Lando'];
 console.log(names);
 names.push('Toad');
 console.log(names);
 names.push('Hi');
-let numbers = [10, 20, 30, 50];
+var numbers = [10, 20, 30, 50];
 numbers.push(40);
 var hi = "hi";
 names[0] = "Ira";
 // object 
-let ninjas = {
+var ninjas = {
     name: 'Ira',
     girl: 'Mia',
     belt: 'Black',
     age: 30,
 };
 console.log(ninjas.name);
-let signal;
-let run = (name) => {
+var signal;
+var run = function (name) {
     signal = true;
     if (signal = true) {
-        const message = 'My name is ${name}';
+        var message = 'My name is ${name}';
         // console.log(message)
         console.log("RUN " + name + " RUN!");
     }
 };
 // run('Forest')
-let greet = () => {
+var greet = function () {
     console.log('Hello darkness');
 };
-const add = (a, b, c = 10) => {
+var add = function (a, b, c) {
+    if (c === void 0) { c = 10; }
     console.log(a + b);
     console.log(c);
 };
 add(5, 10, 'twenty');
-const minus = (a, b) => {
-    console.log(`${a} plus ${b}`);
+var minus = function (a, b) {
+    console.log("".concat(a, " plus ").concat(b));
     return a + b;
 };
-let result = minus(10, 6);
+var result = minus(10, 6);
 console.log(result);
+var Invoice = /** @class */ (function () {
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
+    }
+    Invoice.prototype.format = function () {
+        return "".concat(this.client, " owes ").concat(this.amount, "e for ").concat(this.details);
+    };
+    return Invoice;
+}());
+var invoices = [];
+var invOne = new Invoice('mario', 'food', 250);
+var invTwo = new Invoice('Ira', 'games', 250);
+var invThree = new Invoice('Mia', "looks", 250);
+invoices.push(invOne);
+invoices.push(invTwo);
+invoices.push(invThree);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.details, inv.amount, inv.format());
+});
